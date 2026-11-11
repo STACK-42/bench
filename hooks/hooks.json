@@ -1,0 +1,17 @@
+{
+  "description": "comp-lab guards: uploads need the person's approval, and no whole-folder formatting, in competition repos only",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/guard.py\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
