@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1200" height="400" role="img" aria-labelledby="t d">
+  <title id="t">The bench loop</title>
+  <desc id="d">comp-start proves the validation, experiment tries one idea on two checks, research sends agents to try many, submit uploads only with your approval, postmortem checks whether the leaderboard agrees, and its lessons feed the next experiment. A change is kept only if CV and the shadow test both beat twice the noise.</desc>
+  <style>
+    .name { font: 700 22px "Space Grotesk", Inter, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; fill: #15181C; }
+    .sub { font: 400 15px Inter, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; fill: #5B636B; }
+    .small { font: 600 14px Inter, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .mono { font: 500 15px "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace; fill: #15181C; }
+  </style>
+  <rect x="0" y="0" width="1200" height="400" rx="20" fill="#F6F7F5"/>
+
+  <!-- five stages -->
+  <g>
+    <rect x="30" y="48" width="196" height="112" rx="14" fill="#FFFFFF" stroke="#DCE0DC" stroke-width="1.5"/>
+    <text class="name" x="52" y="96">comp-start</text>
+    <text class="sub" x="52" y="124">prove the validation</text>
+  </g>
+  <g>
+    <rect x="266" y="48" width="196" height="112" rx="14" fill="#FFFFFF" stroke="#0B7A4B" stroke-width="2"/>
+    <text class="name" x="288" y="96">experiment</text>
+    <text class="sub" x="288" y="124">one idea, two checks</text>
+  </g>
+  <g>
+    <rect x="502" y="48" width="196" height="112" rx="14" fill="#FFFFFF" stroke="#DCE0DC" stroke-width="1.5"/>
+    <text class="name" x="524" y="96">research</text>
+    <text class="sub" x="524" y="124">agents try many</text>
+  </g>
+  <g>
+    <rect x="738" y="48" width="196" height="112" rx="14" fill="#FFF4EB" stroke="#B45309" stroke-width="2"/>
+    <text class="name" x="760" y="96" style="fill:#B45309">submit</text>
+    <text class="sub" x="760" y="124">you approve each one</text>
+  </g>
+  <g>
+    <rect x="974" y="48" width="196" height="112" rx="14" fill="#FFFFFF" stroke="#DCE0DC" stroke-width="1.5"/>
+    <text class="name" x="996" y="96">postmortem</text>
+    <text class="sub" x="996" y="124">do the checks agree?</text>
+  </g>
+
+  <!-- arrows between stages -->
+  <g fill="none" stroke="#5B636B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M230 104 H260 M252 98 L260 104 L252 110"/>
+    <path d="M466 104 H496 M488 98 L496 104 L488 110"/>
+    <path d="M702 104 H732 M724 98 L732 104 L724 110"/>
+    <path d="M938 104 H968 M960 98 L968 104 L960 110"/>
+  </g>
+
+  <!-- lessons feed back from postmortem to experiment -->
+  <path d="M1072 164 V214 Q1072 228 1058 228 H378 Q364 228 364 214 V172 M358 180 L364 172 L370 180" fill="none" stroke="#0B7A4B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text class="small" x="664" y="252" text-anchor="middle" style="fill:#0B7A4B">lessons feed the next experiment</text>
+
+  <!-- the gate -->
+  <rect x="30" y="288" width="1140" height="80" rx="14" fill="#FFFFFF" stroke="#DCE0DC" stroke-width="1.5"/>
+  <rect x="54" y="310" width="78" height="36" rx="18" fill="#0B7A4B"/>
+  <text class="small" x="93" y="333" text-anchor="middle" style="fill:#FFFFFF">KEEP</text>
+  <text class="mono" x="152" y="334">only if CV and the shadow test both beat 2 × noise</text>
+  <text class="sub" x="1146" y="334" text-anchor="end">the leaderboard never decides alone</text>
+</svg>

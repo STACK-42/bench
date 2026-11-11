@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256"><title>bench</title><g transform="translate(-23.3 -23.3) scale(1.182)">
+  <title id="t">bench symbol, small sizes</title>
+  <!-- Small-size cut: heavier strokes (44) and a fuller footprint, for 16-48 px. -->
+  <path fill="#0B7A4B" fill-rule="evenodd" d="M56 24 H100 V104 H164 A36 36 0 0 1 200 140 V232 H56 Z M100 146 H156 V190 H100 Z"/>
+</g></svg>

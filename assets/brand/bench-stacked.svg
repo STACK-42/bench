@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 420" width="400" height="420" role="img" aria-labelledby="t">
+  <title id="t">bench stacked lockup</title>
+  <path fill="#0B7A4B" fill-rule="evenodd" transform="translate(72 0)" d="M60 32 H96 V112 H164 A32 32 0 0 1 196 144 V224 H60 Z M96 146 H160 V190 H96 Z"/>
+  <g transform="translate(24 268) scale(0.5)">
+  <path fill="#15181C" fill-rule="evenodd" d="M24 32 H52 V96 H108 A28 28 0 0 1 136 124 V224 H24 Z M52 124 H108 V196 H52 Z"/>
+  <path fill="#15181C" fill-rule="evenodd" d="M160 96 H244 A28 28 0 0 1 272 124 V174 H188 V196 H272 V224 H160 Z M188 124 H244 V146 H188 Z"/>
+  <path fill="#15181C" fill-rule="evenodd" d="M296 96 H380 A28 28 0 0 1 408 124 V224 H380 V124 H324 V224 H296 Z"/>
+  <path fill="#15181C" fill-rule="evenodd" d="M432 96 H516 A28 28 0 0 1 544 124 V146 H516 V124 H460 V196 H544 V224 H432 Z"/>
+  <path fill="#15181C" fill-rule="evenodd" d="M568 32 H596 V96 H652 A28 28 0 0 1 680 124 V224 H652 V124 H596 V224 H568 Z"/>
+  </g>
+</svg>
