@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - name: Install the template's environment
+        run: uv sync --locked
+        working-directory: template
+      - name: Lint the template and the hook
+        run: |
+          uv run --project template ruff check template hooks tests
+          uv run --project template ruff format --check template hooks tests
+      - name: Test the template
+        run: uv run pytest
+        working-directory: template
+      - name: Test the hook
+        run: uv run --project template pytest -q tests
+      - name: Check the JSON manifests
+        run: |
+          for f in .claude-plugin/plugin.json .claude-plugin/marketplace.json hooks/hooks.json; do
+            python3 -m json.tool "$f" > /dev/null && echo "$f ok"
+          done
