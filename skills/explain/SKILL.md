@@ -1,6 +1,6 @@
 ---
 name: explain
-description: Write learning notes in a comp-lab competition repo - explain a finding, technique or metric detail in three layers (plain idea, worked example, formula or code) in simple English, and keep a glossary. Use when notes are enabled in comp.toml and a finding changes the plan, a new technique is introduced, or the person asks why something happened.
+description: Write learning notes in a bench competition repo - explain a finding, technique or metric detail in three layers (plain idea, worked example, formula or code) in simple English, and keep a glossary. Use when notes are enabled in comp.toml and a finding changes the plan, a new technique is introduced, or the person asks why something happened.
 ---
 
 # Explain a finding
@@ -13,7 +13,7 @@ Use this only when `[notes] enabled = true` in `comp.toml`. The notes are for th
 - One page per topic: `notes/NN-short-topic.html`. Keep a status page (`notes/NN-where-we-stand.html`) with a status box at the top, a section per finding, and a log table at the bottom; update it after every upload, leaderboard score and finding that changes the plan.
 - `notes/glossary.html`: every special word, the first time it appears anywhere.
 
-Plain HTML with one small inline stylesheet, readable offline. Diagrams as inline SVG when a picture says it faster.
+Plain HTML, readable offline, in the bench theme: copy `${CLAUDE_PLUGIN_ROOT}/assets/brand/notes.css` to `notes/bench.css` once and link it from every page. It gives light and dark modes, `.status`, `.layer.idea` / `.layer.example` / `.layer.formula` boxes for the three layers, `.keep` / `.drop` chips, and `.glossary`. Diagrams as inline SVG when a picture says it faster, in the same colours: ink #15181C, green #0B7A4B for what is kept or good, amber #B45309 for uploads and warnings, muted #5B636B for labels.
 
 ## Three layers, always in this order
 

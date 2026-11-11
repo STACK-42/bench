@@ -1,9 +1,9 @@
 {
-  "name": "comp-lab",
+  "name": "bench",
   "owner": { "name": "Ahmed Alghali" },
   "plugins": [
     {
-      "name": "comp-lab",
+      "name": "bench",
       "source": "./",
       "description": "Run machine learning competitions with Claude: validation first, research agents, tracked results, approved uploads."
     }

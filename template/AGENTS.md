@@ -1,6 +1,6 @@
 # Rules for coding agents
 
-This is a machine learning competition repo made from the comp-lab template. Its one goal is the best final score. `comp.toml` says which competition, which metric, solo or team, and whether to write learning notes. Read it, `README.md` and `experiments.md` before you change anything.
+This is a machine learning competition repo made from the bench template. Its one goal is the best final score. `comp.toml` says which competition, which metric, solo or team, and whether to write learning notes. Read it, `README.md` and `experiments.md` before you change anything.
 
 ## How a score is trusted
 

@@ -1,8 +1,8 @@
 # Lessons across competitions
 
 Lessons about the method, grouped by problem type. Each one says where it was
-learned. `/comp-lab:comp-start` reads this file before planning a new
-competition, and `/comp-lab:postmortem` adds to it.
+learned. `/bench:comp-start` reads this file before planning a new
+competition, and `/bench:postmortem` adds to it.
 
 ## Any competition
 

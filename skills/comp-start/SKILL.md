@@ -1,6 +1,6 @@
 ---
 name: comp-start
-description: Start a new machine learning competition (Kaggle or Zindi) from the comp-lab template - create the repo, fill comp.toml, and build and prove the validation before any model. Use when the person wants to begin or set up a competition or ML project.
+description: Start a new machine learning competition (Kaggle or Zindi) from the bench template - create the repo, fill comp.toml, and build and prove the validation before any model. Use when the person wants to begin or set up a competition or ML project.
 ---
 
 # Start a competition
@@ -19,7 +19,7 @@ Ask only for what you can't find yourself: the competition URL, and solo or team
 - daily upload limit, final pick count, deadline (with time zone)
 - rules on external data and pretrained models
 
-Save the page text in `docs/competition.md`. Read the shared lessons, `~/.comp-lab/lessons.md` (create it from `${CLAUDE_PLUGIN_ROOT}/lessons/seed.md` if it is missing), and note which ones apply.
+Save the page text in `docs/competition.md`. Read the shared lessons, `~/.bench/lessons.md` (create it from `${CLAUDE_PLUGIN_ROOT}/lessons/seed.md` if it is missing), and note which ones apply.
 
 ## 2. Create the repo
 

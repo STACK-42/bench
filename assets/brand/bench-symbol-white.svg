@@ -1,0 +1,5 @@
+<svg fill="#ffffff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-labelledby="t"><title>bench</title>
+  <title id="t">bench symbol</title>
+  <!-- Side view of a bench, also a b: back post = stem, seat with rounded front (r=32), front leg, stretcher. Horizontals thinned to 34 for optical balance. -->
+  <path fill="#ffffff" fill-rule="evenodd" d="M60 32 H96 V112 H164 A32 32 0 0 1 196 144 V224 H60 Z M96 146 H160 V190 H96 Z"/>
+</svg>

@@ -1,6 +1,6 @@
 ---
 name: researcher
-description: Tests many variants of one ML direction in a comp-lab competition repo, in its own git worktree, and returns a standard report table with CV and shadow scores against the baseline. Use with a filled brief from the research skill.
+description: Tests many variants of one ML direction in a bench competition repo, in its own git worktree, and returns a standard report table with CV and shadow scores against the baseline. Use with a filled brief from the research skill.
 isolation: worktree
 ---
 

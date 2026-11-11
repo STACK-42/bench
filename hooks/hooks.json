@@ -1,5 +1,5 @@
 {
-  "description": "comp-lab guards: uploads need the person's approval, and no whole-folder formatting, in competition repos only",
+  "description": "bench guards: uploads need the person's approval, and no whole-folder formatting, in competition repos only",
   "hooks": {
     "PreToolUse": [
       {
