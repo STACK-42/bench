@@ -1,0 +1,11 @@
+{
+  "name": "comp-lab",
+  "owner": { "name": "Ahmed Alghali" },
+  "plugins": [
+    {
+      "name": "comp-lab",
+      "source": "./",
+      "description": "Run machine learning competitions with Claude: validation first, research agents, tracked results, approved uploads."
+    }
+  ]
+}
