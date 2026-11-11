@@ -1,0 +1,37 @@
+# One file that tells the harness, the skills and the agents about this competition.
+# /comp-start fills it in. Change it by hand when you learn something new.
+
+[competition]
+platform = "kaggle"            # kaggle | zindi
+slug = "CHANGE-ME"             # the competition's name in its URL
+url = ""
+deadline = ""                  # e.g. "2026-11-21T23:59+03:00"
+daily_uploads = 5
+final_picks = 2                # how many files count for the private board
+
+[data]
+train = "train.csv"
+test = "test.csv"
+sample_submission = "sample_submission.csv"
+id_column = "id"
+target_column = "target"
+group_column = ""              # rows that must stay in the same fold (a user, a patient, a day)
+time_column = ""               # set it when the test set comes after the training set in time
+
+[task]
+type = "regression"            # regression | binary | multiclass
+metric = "rmse"                # rmse | mae | rmsle | mape | auc | logloss | accuracy | f1 | r2
+
+[cv]
+scheme = "kfold"               # kfold | group | time
+folds = 5
+seeds = 1                      # how many times to repeat the folds with new shuffles
+
+[team]
+mode = "solo"                  # solo | team
+people = ["me"]                # one experiments/<name>/ folder per person
+reviewers = []                 # GitHub logins to ask for review in team mode
+
+[notes]
+enabled = true                 # explain findings in notes/ for learning
+style = "simple English, three layers: the idea, a worked example, the formula or code"
