@@ -7,11 +7,9 @@
 
 <p align="center"><strong>Validation first. Every result measured twice.</strong></p>
 
-<p align="center"><a href="https://github.com/A7med7x7/bench/actions/workflows/ci.yml"><img src="https://github.com/A7med7x7/bench/actions/workflows/ci.yml/badge.svg" alt="CI"></a></p>
+<p align="center"><a href="https://github.com/STACK-42/bench/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/STACK-42/bench/ci.yml?branch=main&amp;label=CI" alt="CI"></a></p>
 
-bench is a Claude Code plugin for machine learning competitions on Kaggle and Zindi. It has one goal: the best final score. It does not try to get there by guessing faster. It makes the validation trustworthy first, then lets a main agent and research agents run many experiments that are all measured the same way.
-
-It grew out of the Madinah crowd-count competition (Kaggle, 2026). There, one model scored 0.821 in cross-validation and 1.022 on the leaderboard. A second check built to look like the test caught the problem, and a research agent then found three improvements in one evening. This plugin packages that way of working.
+bench is a Claude Code plugin for machine learning competitions on Kaggle and Zindi. Its goal is the best final score. First it builds a validation you can trust. Then a main agent and research agents run many experiments, and every one is measured the same way.
 
 ![The bench loop: comp-start proves the validation, experiment tries one idea on two checks, research sends agents to try many, submit uploads only with your approval, postmortem checks whether the leaderboard agrees, and lessons feed the next experiment. A change is kept only if CV and the shadow test both beat twice the noise.](assets/brand/loop.svg)
 
@@ -34,10 +32,8 @@ It grew out of the Madinah crowd-count competition (Kaggle, 2026). There, one mo
 
 ## Install
 
-The repo is private, so your git must be able to read it (`gh auth login` and `gh auth setup-git`, or an SSH key).
-
 ```text
-/plugin marketplace add A7med7x7/bench
+/plugin marketplace add STACK-42/bench
 /plugin install bench@bench
 ```
 
@@ -67,7 +63,7 @@ Every experiment is scored twice. `uv run comp run` gives the CV score and the s
 
 ## How it is built
 
-- Claude is the orchestrator. The skills say what to do at each stage, the agents have fixed roles and limits, and the hook enforces the two rules that must never depend on memory: uploads need your approval, and nothing formats the whole folder.
+- Claude runs the work. The skills say what to do at each stage, and each agent has one job and fixed limits. The hook enforces two rules that should never depend on an agent remembering them: uploads need your approval, and nothing formats the whole folder.
 - The template is copied into each competition and then belongs to it. Change `data.py`, `cv.py`, `metric.py` and `shadow.py` freely for a competition with a different shape; keep their meaning.
 - Lessons live in `~/.bench/lessons.md` on your machine, seeded from `lessons/seed.md`. Add the general ones back to `lessons/seed.md` here so every new competition starts from them.
 
