@@ -1,9 +1,9 @@
 ---
-name: postmortem
+name: review
 description: After a leaderboard score comes back in a bench repo, check whether CV, the shadow test and the leaderboard agree, find out why if they don't, and record lessons for this and future competitions. Use after every upload's score, and at the end of a competition.
 ---
 
-# Postmortem
+# Review
 
 The leaderboard is the only check you can't build yourself. Use every score to test your own checks.
 

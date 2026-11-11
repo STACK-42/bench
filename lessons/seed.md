@@ -2,7 +2,7 @@
 
 Lessons about the method, grouped by problem type. Each one says where it was
 learned. `/bench:comp-start` reads this file before planning a new
-competition, and `/bench:postmortem` adds to it.
+competition, and `/bench:review` adds to it.
 
 ## Any competition
 

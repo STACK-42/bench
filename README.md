@@ -11,7 +11,7 @@
 
 bench is a Claude Code plugin for machine learning competitions on Kaggle and Zindi. Its goal is the best final score. First it builds a validation you can trust. Then a main agent and research agents run many experiments, and every one is measured the same way.
 
-![The bench loop: comp-start proves the validation, experiment tries one idea on two checks, research sends agents to try many, submit uploads only with your approval, postmortem checks whether the leaderboard agrees, and lessons feed the next experiment. A change is kept only if CV and the shadow test both beat twice the noise.](assets/brand/loop.svg)
+![The bench loop: comp-start proves the validation, experiment tries one idea on two checks, research sends agents to try many, submit uploads only with your approval, review checks whether the leaderboard agrees, and lessons feed the next experiment. A change is kept only if CV and the shadow test both beat twice the noise.](assets/brand/loop.svg)
 
 ## What is in it
 
@@ -22,7 +22,7 @@ bench is a Claude Code plugin for machine learning competitions on Kaggle and Zi
 | `skills/experiment` | one idea, scored on CV and the shadow test against the noise, logged, kept or dropped |
 | `skills/research` | send research agents to try many ideas in their own worktrees, with a fixed brief and report |
 | `skills/submit` | plan the day's few uploads, upload with your approval, pick the final submissions |
-| `skills/postmortem` | after each leaderboard score: do the checks agree? Record lessons |
+| `skills/review` | after each leaderboard score: do the checks agree? Record lessons |
 | `skills/explain` | optional learning notes in three layers, in simple English |
 | `agents/researcher` | tests one direction in a git worktree and reports a table |
 | `agents/leak-auditor` | reads an experiment and reports any information leak |
@@ -54,7 +54,7 @@ Then work in that repo:
 /bench:experiment   try adding lag features to 003_baseline
 /bench:research     test the ideas in this playbook against our best model
 /bench:submit       upload the best file when the limit resets
-/bench:postmortem   the score came back: 0.912
+/bench:review       the score came back: 0.912
 ```
 
 Every experiment is scored twice. `uv run comp run` gives the CV score and the shadow score, and `uv run comp compare` keeps a change only if it is better on both by more than twice the noise that `uv run comp noise` measured. The leaderboard is a third check and never decides alone.

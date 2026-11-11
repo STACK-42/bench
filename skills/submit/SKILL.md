@@ -34,7 +34,7 @@ Zindi has no upload API here: `comp submit` checks the file and prints what to u
 ## Afterwards
 
 - Commit `submissions.md` with the new score.
-- Run the `postmortem` skill: did the leaderboard move the way CV and shadow said?
+- Run the `review` skill: did the leaderboard move the way CV and shadow said?
 - If `[notes] enabled`, update the notes' status page.
 - If the file beats the best score so far, push and merge the work the way the repo's rules say.
 
