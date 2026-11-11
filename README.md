@@ -1,5 +1,7 @@
 # comp-lab
 
+[![CI](https://github.com/A7med7x7/comp-lab/actions/workflows/ci.yml/badge.svg)](https://github.com/A7med7x7/comp-lab/actions/workflows/ci.yml)
+
 A Claude Code plugin for machine learning competitions on Kaggle and Zindi. It has one goal: the best final score. It does not try to get there by guessing faster. It makes the validation trustworthy first, then lets a main agent and research agents run many experiments that are all measured the same way.
 
 It grew out of the Madinah crowd-count competition (Kaggle, 2026). There, one model scored 0.821 in cross-validation and 1.022 on the leaderboard. A second check built to look like the test caught the problem, and a research agent then found three improvements in one evening. This plugin packages that way of working.
