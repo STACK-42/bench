@@ -1,6 +1,6 @@
 ---
 name: leak-auditor
-description: Reads an experiment's code in a comp-lab competition repo and reports any way it could see information the real test would not have (target leakage, future values, held-out rows, test labels). Read-only. Use before submitting a new method and on every research agent's winning code.
+description: Reads an experiment's code in a bench competition repo and reports any way it could see information the real test would not have (target leakage, future values, held-out rows, test labels). Read-only. Use before submitting a new method and on every research agent's winning code.
 tools: Read, Grep, Glob, Bash
 ---
 

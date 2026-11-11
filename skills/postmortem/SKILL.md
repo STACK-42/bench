@@ -1,6 +1,6 @@
 ---
 name: postmortem
-description: After a leaderboard score comes back in a comp-lab repo, check whether CV, the shadow test and the leaderboard agree, find out why if they don't, and record lessons for this and future competitions. Use after every upload's score, and at the end of a competition.
+description: After a leaderboard score comes back in a bench repo, check whether CV, the shadow test and the leaderboard agree, find out why if they don't, and record lessons for this and future competitions. Use after every upload's score, and at the end of a competition.
 ---
 
 # Postmortem
@@ -26,4 +26,4 @@ The leaderboard is the only check you can't build yourself. Use every score to t
 
 Add a lesson to `lessons.md` in the repo whenever the method itself worked or failed: a check that caught a problem, a check that missed one, an agent mistake, a workflow that saved time. Write the lesson, the evidence (numbers), and what to do next time.
 
-At the end of a competition, or when a lesson is clearly general, copy it to the shared file `~/.comp-lab/lessons.md` under its problem type (create the file from `${CLAUDE_PLUGIN_ROOT}/lessons/seed.md` if missing), with the competition's name and year. Tell the person, so they can also add it to the plugin's `lessons/seed.md` for everyone.
+At the end of a competition, or when a lesson is clearly general, copy it to the shared file `~/.bench/lessons.md` under its problem type (create the file from `${CLAUDE_PLUGIN_ROOT}/lessons/seed.md` if missing), with the competition's name and year. Tell the person, so they can also add it to the plugin's `lessons/seed.md` for everyone.

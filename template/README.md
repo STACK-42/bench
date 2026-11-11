@@ -2,7 +2,7 @@
 
 CHANGE-ME: what the competition asks for, in one or two sentences, and its deadline.
 
-Made from the comp-lab template. `comp.toml` describes the competition; `AGENTS.md` has the rules for coding agents.
+Made from the bench template. `comp.toml` describes the competition; `AGENTS.md` has the rules for coding agents.
 
 ## Setup
 

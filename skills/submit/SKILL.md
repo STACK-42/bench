@@ -1,6 +1,6 @@
 ---
 name: submit
-description: Plan and make leaderboard uploads in a comp-lab competition repo - choose which files to spend the day's few uploads on, upload with the person's approval, record the score, and pick the final submissions near the deadline. Use when the person wants to submit, upload, check the leaderboard, or choose final submissions.
+description: Plan and make leaderboard uploads in a bench competition repo - choose which files to spend the day's few uploads on, upload with the person's approval, record the score, and pick the final submissions near the deadline. Use when the person wants to submit, upload, check the leaderboard, or choose final submissions.
 ---
 
 # Submit
@@ -27,7 +27,7 @@ Upload only a file the person asked you to upload, or that falls under a standin
 uv run comp submit submissions/submission<CV>.csv -m "<what changed, in a few words>" --yes
 ```
 
-The comp-lab hook shows the person a permission prompt for every `comp submit`; their approval there is the confirmation, which is why `--yes` is fine after it. Never upload through the platform's own CLI, and never from a research agent.
+The bench hook shows the person a permission prompt for every `comp submit`; their approval there is the confirmation, which is why `--yes` is fine after it. Never upload through the platform's own CLI, and never from a research agent.
 
 Zindi has no upload API here: `comp submit` checks the file and prints what to upload and the comment to use. After the person uploads it, record the score with `uv run comp scores --set <file> <score>`.
 

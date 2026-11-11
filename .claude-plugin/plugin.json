@@ -1,8 +1,8 @@
 {
-  "name": "comp-lab",
+  "name": "bench",
   "version": "0.1.0",
   "description": "Run machine learning competitions (Kaggle, Zindi) with Claude: validation first, a main agent plus research agents, every result tracked, uploads only with your approval.",
   "author": { "name": "Ahmed Alghali" },
-  "repository": "https://github.com/A7med7x7/comp-lab",
+  "repository": "https://github.com/A7med7x7/bench",
   "keywords": ["kaggle", "zindi", "machine-learning", "competition", "mlflow"]
 }

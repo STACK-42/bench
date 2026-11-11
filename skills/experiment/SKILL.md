@@ -1,6 +1,6 @@
 ---
 name: experiment
-description: Run one experiment in a comp-lab competition repo - one idea, scored on CV and the shadow test against the noise, logged, kept or dropped. Use when trying an idea, a feature, a model or a setting to improve the score.
+description: Run one experiment in a bench competition repo - one idea, scored on CV and the shadow test against the noise, logged, kept or dropped. Use when trying an idea, a feature, a model or a setting to improve the score.
 ---
 
 # One experiment
