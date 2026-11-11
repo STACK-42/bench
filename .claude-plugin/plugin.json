@@ -2,7 +2,16 @@
   "name": "bench",
   "version": "0.1.0",
   "description": "Run machine learning competitions (Kaggle, Zindi) with Claude: validation first, a main agent plus research agents, every result tracked, uploads only with your approval.",
-  "author": { "name": "Ahmed Alghali" },
+  "author": {
+    "name": "Ahmed Alghali"
+  },
   "repository": "https://github.com/STACK-42/bench",
-  "keywords": ["kaggle", "zindi", "machine-learning", "competition", "mlflow"]
+  "license": "MIT",
+  "keywords": [
+    "kaggle",
+    "zindi",
+    "machine-learning",
+    "competition",
+    "mlflow"
+  ]
 }
