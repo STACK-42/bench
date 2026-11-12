@@ -6,12 +6,12 @@ Two or three sentences: what helped, by how much, on which checks.
 
 ## Every idea tried
 
-| # | idea | CV (change) | shadow (change) | parts that moved | verdict |
-| --- | --- | --- | --- | --- | --- |
-| 0 | baseline, reproduced | 0.00000 (0) | 0.00000 (0) | | reference |
-| 1 | ... | -0.00000 | -0.00000 | ... | keep / drop / superseded by N |
+| # | card | idea | CV (change) | shadow (change) | parts that moved | verdict |
+| --- | --- | --- | --- | --- | --- | --- |
+| 0 | | baseline, reproduced | 0.00000 (0) | 0.00000 (0) | | reference |
+| 1 | I-NNN | ... | -0.00000 | -0.00000 | ... | keep / drop / superseded by N |
 
-Changes are candidate minus baseline. Say whether lower or higher is better. Mark a verdict "keep" only if CV and shadow both improve by more than twice the noise.
+Changes are candidate minus baseline. Say whether lower or higher is better. Use `own` in the card column for an idea that has no card. Mark a verdict "keep" only if CV and shadow both improve by more than twice the noise.
 
 ## Noise
 

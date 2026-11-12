@@ -6,6 +6,7 @@ You are a research agent for the competition repo at <repo path>. Find out wheth
 
 - `comp.toml`, `README.md`, `AGENTS.md`, `experiments.md`
 - the baseline: `<experiments/name/NNN_baseline.py>`
+- the idea cards to test from `ideas.md`: <I-NNN, I-NNN, ...>
 - <any playbook, paper or notes file the person gave>
 
 ## Where things stand
@@ -27,6 +28,8 @@ You are a research agent for the competition repo at <repo path>. Find out wheth
 - Never upload or run `comp submit`, and never call the platform's CLI to submit.
 - `solve(task)` may use only `task`. No feature may use information the test would not have (no future values, no test labels).
 - Format only the files you wrote.
+- Data: the data files are not in git. Link the main repo's data folder into your worktree: `rmdir data && ln -s <main repo>/data data`.
+- Baseline branch: <main, or the branch to check out first>.
 
 ## Report
 
