@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600" role="img" aria-labelledby="t d">
+  <title id="t">The bench agents</title>
+  <desc id="d">The main agent owns the repo, the decisions and the uploads, and you approve every upload. It sends four agents, each with one job and fixed limits. The scouter reads the web and writes idea cards but runs no code. The researcher tests one direction's cards in its own git worktree, with no web. The validator checks the data and the validation in its own worktree, with no web. The leak auditor reads an experiment's code and reports leaks; it changes nothing. An agent that reads the web can't run code, and an agent that runs code can't read the web.</desc>
+  <style>
+    .name { font: 700 22px "Space Grotesk", Inter, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; fill: #15181C; }
+    .sub { font: 400 15px Inter, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; fill: #5B636B; }
+    .label { font: 600 12px Inter, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; fill: #5B636B; letter-spacing: 0.06em; }
+    .small { font: 600 14px Inter, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .mono { font: 500 14px "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace; fill: #15181C; }
+    .chip { font: 600 13px Inter, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+  </style>
+  <rect x="0" y="0" width="1200" height="600" rx="20" fill="#F6F7F5"/>
+
+  <!-- main agent -->
+  <rect x="30" y="30" width="1140" height="100" rx="14" fill="#FFFFFF" stroke="#0B7A4B" stroke-width="2"/>
+  <text class="name" x="56" y="74">main agent</text>
+  <text class="sub" x="56" y="102">owns the repo, picks the directions, writes the briefs, rebuilds the winners itself</text>
+  <rect x="902" y="60" width="244" height="40" rx="20" fill="#FFF4EB" stroke="#B45309" stroke-width="2"/>
+  <text class="small" x="1024" y="85" text-anchor="middle" style="fill:#B45309">you approve every upload</text>
+
+  <!-- brief down, report up -->
+  <g fill="none" stroke="#5B636B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M152 134 V180 M146 172 L152 180 L158 172"/>
+    <path d="M443 134 V180 M437 172 L443 180 L449 172"/>
+    <path d="M734 134 V180 M728 172 L734 180 L740 172"/>
+    <path d="M1025 134 V180 M1019 172 L1025 180 L1031 172"/>
+  </g>
+  <text class="label" x="162" y="162">BRIEF</text>
+  <text class="label" x="453" y="162">BRIEF</text>
+  <text class="label" x="744" y="162">BRIEF</text>
+  <text class="label" x="1035" y="162">CODE</text>
+
+  <!-- scouter -->
+  <g>
+    <rect x="30" y="186" width="267" height="300" rx="14" fill="#FFFFFF" stroke="#DCE0DC" stroke-width="1.5"/>
+    <text class="name" x="52" y="226">scouter</text>
+    <text class="sub" x="52" y="252">finds ideas worth testing</text>
+    <line x1="52" y1="272" x2="275" y2="272" stroke="#E7EAE6" stroke-width="1.5"/>
+    <text class="label" x="52" y="298">READS</text>
+    <text class="mono" x="52" y="320">forums, write-ups,</text>
+    <text class="mono" x="52" y="340">papers, books</text>
+    <text class="label" x="52" y="372">RETURNS</text>
+    <text class="mono" x="52" y="394">cards in ideas.md</text>
+    <rect x="52" y="446" width="64" height="30" rx="15" fill="#0B7A4B"/>
+    <text class="chip" x="84" y="466" text-anchor="middle" style="fill:#FFFFFF">web</text>
+    <rect x="124" y="446" width="104" height="30" rx="15" fill="#FFFFFF" stroke="#C9CEC9" stroke-width="1.5"/>
+    <text class="chip" x="176" y="466" text-anchor="middle" style="fill:#5B636B;text-decoration:line-through">runs code</text>
+  </g>
+
+  <!-- researcher -->
+  <g>
+    <rect x="329" y="194" width="267" height="300" rx="14" fill="#FFFFFF" stroke="#DCE0DC" stroke-width="1.5"/>
+    <rect x="325" y="190" width="267" height="300" rx="14" fill="#FFFFFF" stroke="#DCE0DC" stroke-width="1.5"/>
+    <rect x="321" y="186" width="267" height="300" rx="14" fill="#FFFFFF" stroke="#0B7A4B" stroke-width="2"/>
+    <text class="name" x="343" y="226">researcher <tspan class="sub">up to 3</tspan></text>
+    <text class="sub" x="343" y="252">tests one direction's cards</text>
+    <line x1="343" y1="272" x2="566" y2="272" stroke="#E7EAE6" stroke-width="1.5"/>
+    <text class="label" x="343" y="298">READS</text>
+    <text class="mono" x="343" y="320">ideas.md, baseline</text>
+    <text class="label" x="343" y="352">WORKS IN</text>
+    <text class="mono" x="343" y="374">its own git worktree</text>
+    <text class="label" x="343" y="406">RETURNS</text>
+    <text class="mono" x="343" y="428">a report table</text>
+    <rect x="343" y="446" width="64" height="30" rx="15" fill="#FFFFFF" stroke="#C9CEC9" stroke-width="1.5"/>
+    <text class="chip" x="375" y="466" text-anchor="middle" style="fill:#5B636B;text-decoration:line-through">web</text>
+    <rect x="415" y="446" width="104" height="30" rx="15" fill="#0B7A4B"/>
+    <text class="chip" x="467" y="466" text-anchor="middle" style="fill:#FFFFFF">runs code</text>
+  </g>
+
+  <!-- validator -->
+  <g>
+    <rect x="612" y="186" width="267" height="300" rx="14" fill="#FFFFFF" stroke="#DCE0DC" stroke-width="1.5"/>
+    <text class="name" x="634" y="226">validator</text>
+    <text class="sub" x="634" y="252">checks the checks</text>
+    <line x1="634" y1="272" x2="857" y2="272" stroke="#E7EAE6" stroke-width="1.5"/>
+    <text class="label" x="634" y="298">READS</text>
+    <text class="mono" x="634" y="320">data, CV, shadow,</text>
+    <text class="mono" x="634" y="340">leaderboard scores</text>
+    <text class="label" x="634" y="372">RETURNS</text>
+    <text class="mono" x="634" y="394">noise, train/test gap,</text>
+    <text class="mono" x="634" y="414">do the checks agree?</text>
+    <rect x="634" y="446" width="64" height="30" rx="15" fill="#FFFFFF" stroke="#C9CEC9" stroke-width="1.5"/>
+    <text class="chip" x="666" y="466" text-anchor="middle" style="fill:#5B636B;text-decoration:line-through">web</text>
+    <rect x="706" y="446" width="104" height="30" rx="15" fill="#0B7A4B"/>
+    <text class="chip" x="758" y="466" text-anchor="middle" style="fill:#FFFFFF">runs code</text>
+  </g>
+
+  <!-- leak auditor -->
+  <g>
+    <rect x="903" y="186" width="267" height="300" rx="14" fill="#FFFFFF" stroke="#DCE0DC" stroke-width="1.5"/>
+    <text class="name" x="925" y="226">leak-auditor</text>
+    <text class="sub" x="925" y="252">looks for leaks</text>
+    <line x1="925" y1="272" x2="1148" y2="272" stroke="#E7EAE6" stroke-width="1.5"/>
+    <text class="label" x="925" y="298">READS</text>
+    <text class="mono" x="925" y="320">a winner's code,</text>
+    <text class="mono" x="925" y="340">before any upload</text>
+    <text class="label" x="925" y="372">RETURNS</text>
+    <text class="mono" x="925" y="394">clean, or each leak</text>
+    <text class="mono" x="925" y="414">with file:line</text>
+    <rect x="925" y="446" width="64" height="30" rx="15" fill="#FFFFFF" stroke="#C9CEC9" stroke-width="1.5"/>
+    <text class="chip" x="957" y="466" text-anchor="middle" style="fill:#5B636B;text-decoration:line-through">web</text>
+    <rect x="997" y="446" width="104" height="30" rx="15" fill="#FFFFFF" stroke="#0B7A4B" stroke-width="1.5"/>
+    <text class="chip" x="1049" y="466" text-anchor="middle" style="fill:#0B7A4B">read-only</text>
+  </g>
+
+  <!-- the rule -->
+  <rect x="30" y="514" width="1140" height="60" rx="14" fill="#FFFFFF" stroke="#DCE0DC" stroke-width="1.5"/>
+  <rect x="54" y="530" width="78" height="28" rx="14" fill="#15181C"/>
+  <text class="chip" x="93" y="549" text-anchor="middle" style="fill:#FFFFFF">RULE</text>
+  <text class="mono" x="152" y="549">reads the web → can't run code.  runs code → can't read the web.</text>
+  <text class="sub" x="1146" y="549" text-anchor="end">a web page never becomes a command</text>
+</svg>

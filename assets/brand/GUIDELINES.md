@@ -9,7 +9,7 @@
   - symbol (`bench-symbol.svg`) for 64 px and up.
   - small symbol (`bench-symbol-small.svg`) for 16 to 48 px.
   - wordmark (`bench-wordmark.svg`): all ink.
-- Files: SVG for screens and print. `bench-horizontal-dark.svg` keeps the green b for dark backgrounds. The web icons are in `icons/`, the presentation slides in `board/`, the workflow diagram is `loop.svg`, and `notes.css` themes learning notes.
+- Files: SVG for screens and print. `bench-horizontal-dark.svg` keeps the green b for dark backgrounds. The web icons are in `icons/`, the presentation slides in `board/`, the workflow diagram is `loop.svg`, the agents are drawn in `agents.svg` and `research-round.svg`, and `notes.css` themes learning notes.
 
 ## 2. Clear space
 

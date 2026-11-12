@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" width="1200" height="520" role="img" aria-labelledby="t d">
+  <title id="t">A research round</title>
+  <desc id="d">A research round in five steps. First the scouter and the validator fill ideas.md. The main agent then groups the cards into three to six directions and sends up to three researchers, each in its own git worktree. The leak auditor reads each winner's code. The main agent rebuilds the winners as the next experiment and confirms the numbers itself. Each tested card goes back to ideas.md as kept or dropped, with its numbers. A card moves from new to testing to kept or dropped. A winner is kept only if it beats the baseline on CV and the shadow test by more than twice the noise, and the report's first row must reproduce the baseline's scores.</desc>
+  <style>
+    .name { font: 700 22px "Space Grotesk", Inter, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; fill: #15181C; }
+    .sub { font: 400 15px Inter, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; fill: #5B636B; }
+    .step { font: 700 13px "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace; fill: #0B7A4B; }
+    .small { font: 600 14px Inter, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .mono { font: 500 15px "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace; fill: #15181C; }
+    .chip { font: 600 13px Inter, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+  </style>
+  <rect x="0" y="0" width="1200" height="520" rx="20" fill="#F6F7F5"/>
+
+  <!-- five steps -->
+  <g>
+    <rect x="30" y="48" width="196" height="128" rx="14" fill="#FFFFFF" stroke="#DCE0DC" stroke-width="1.5"/>
+    <text class="step" x="52" y="80">1</text>
+    <text class="name" x="52" y="112">fill</text>
+    <text class="sub" x="52" y="140">scouter writes cards,</text>
+    <text class="sub" x="52" y="160">validator checks</text>
+  </g>
+  <g>
+    <rect x="266" y="48" width="196" height="128" rx="14" fill="#FFFFFF" stroke="#DCE0DC" stroke-width="1.5"/>
+    <text class="step" x="288" y="80">2</text>
+    <text class="name" x="288" y="112">choose</text>
+    <text class="sub" x="288" y="140">3 to 6 directions,</text>
+    <text class="sub" x="288" y="160">one brief each</text>
+  </g>
+  <g>
+    <rect x="510" y="56" width="196" height="128" rx="14" fill="#FFFFFF" stroke="#DCE0DC" stroke-width="1.5"/>
+    <rect x="506" y="52" width="196" height="128" rx="14" fill="#FFFFFF" stroke="#DCE0DC" stroke-width="1.5"/>
+    <rect x="502" y="48" width="196" height="128" rx="14" fill="#FFFFFF" stroke="#0B7A4B" stroke-width="2"/>
+    <text class="step" x="524" y="80">3</text>
+    <text class="name" x="524" y="112">test</text>
+    <text class="sub" x="524" y="140">up to 3 researchers,</text>
+    <text class="sub" x="524" y="160">each in a worktree</text>
+  </g>
+  <g>
+    <rect x="738" y="48" width="196" height="128" rx="14" fill="#FFFFFF" stroke="#DCE0DC" stroke-width="1.5"/>
+    <text class="step" x="760" y="80">4</text>
+    <text class="name" x="760" y="112">audit</text>
+    <text class="sub" x="760" y="140">leak-auditor reads</text>
+    <text class="sub" x="760" y="160">each winner's code</text>
+  </g>
+  <g>
+    <rect x="974" y="48" width="196" height="128" rx="14" fill="#FFFFFF" stroke="#DCE0DC" stroke-width="1.5"/>
+    <text class="step" x="996" y="80">5</text>
+    <text class="name" x="996" y="112">rebuild</text>
+    <text class="sub" x="996" y="140">main agent, as the</text>
+    <text class="sub" x="996" y="160">next experiment</text>
+  </g>
+
+  <!-- arrows between steps -->
+  <g fill="none" stroke="#5B636B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M230 112 H260 M252 106 L260 112 L252 118"/>
+    <path d="M466 112 H496 M488 106 L496 112 L488 118"/>
+    <path d="M712 112 H732 M724 106 L732 112 L724 118"/>
+    <path d="M938 112 H968 M960 106 L968 112 L960 118"/>
+  </g>
+
+  <!-- ideas.md backlog -->
+  <rect x="30" y="236" width="1140" height="128" rx="14" fill="#FFFFFF" stroke="#DCE0DC" stroke-width="1.5"/>
+  <text class="mono" x="56" y="276">ideas.md</text>
+  <text class="sub" x="56" y="300">one card per idea:</text>
+  <text class="sub" x="56" y="320">source, idea, why here,</text>
+  <text class="sub" x="56" y="340">cost, result</text>
+
+  <!-- card states -->
+  <rect x="330" y="268" width="86" height="34" rx="17" fill="#FFFFFF" stroke="#5B636B" stroke-width="1.5"/>
+  <text class="chip" x="373" y="290" text-anchor="middle" style="fill:#15181C">new</text>
+  <rect x="470" y="268" width="100" height="34" rx="17" fill="#FFFFFF" stroke="#0B7A4B" stroke-width="2" stroke-dasharray="5 4"/>
+  <text class="chip" x="520" y="290" text-anchor="middle" style="fill:#0B7A4B">testing</text>
+  <rect x="624" y="250" width="92" height="34" rx="17" fill="#0B7A4B"/>
+  <text class="chip" x="670" y="272" text-anchor="middle" style="fill:#FFFFFF">kept</text>
+  <rect x="624" y="298" width="92" height="34" rx="17" fill="#FFFFFF" stroke="#C9CEC9" stroke-width="1.5"/>
+  <text class="chip" x="670" y="320" text-anchor="middle" style="fill:#5B636B">dropped</text>
+  <g fill="none" stroke="#5B636B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M420 285 H462 M454 279 L462 285 L454 291"/>
+    <path d="M574 279 L616 267 M607 263 L616 267 L610 274"/>
+    <path d="M574 291 L616 314 M609 316 L616 314 L613 307"/>
+  </g>
+  <text class="sub" x="756" y="276">kept: in the next experiment</text>
+  <text class="sub" x="756" y="300">dropped: nobody tries it again</text>
+  <text class="sub" x="756" y="324">without a new reason</text>
+
+  <!-- step 1 reads the backlog, step 2 marks cards testing, step 5 writes results -->
+  <g fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M128 180 V228 M122 220 L128 228 L134 220" stroke="#5B636B"/>
+    <path d="M364 180 V228 M358 220 L364 228 L370 220" stroke="#5B636B"/>
+    <path d="M1072 180 V206 Q1072 214 1064 214 H700 Q692 214 692 222 V244 M686 236 L692 244 L698 236" stroke="#0B7A4B"/>
+  </g>
+  <text class="small" x="880" y="206" text-anchor="middle" style="fill:#0B7A4B">results go back on the card</text>
+
+  <!-- the gate -->
+  <rect x="30" y="396" width="1140" height="92" rx="14" fill="#FFFFFF" stroke="#DCE0DC" stroke-width="1.5"/>
+  <rect x="54" y="424" width="78" height="36" rx="18" fill="#0B7A4B"/>
+  <text class="small" x="93" y="447" text-anchor="middle" style="fill:#FFFFFF">KEEP</text>
+  <text class="mono" x="152" y="436">only if CV and the shadow test both beat 2 × noise</text>
+  <text class="sub" x="152" y="464">and the report's first row reproduces the baseline's scores exactly</text>
+  <text class="sub" x="1146" y="447" text-anchor="end">the main agent reruns it before any upload</text>
+</svg>

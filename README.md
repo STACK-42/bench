@@ -31,7 +31,7 @@ bench is a Claude Code plugin for machine learning competitions on Kaggle and Zi
 | `agents/leak-auditor` | reads an experiment and reports any information leak |
 | `hooks/guard.py` | in competition repos: asks you before every upload, blocks uploads that skip the log, blocks whole-folder formatting |
 | `lessons/seed.md` | lessons across competitions, read at the start of each new one |
-| `assets/brand/` | the bench logo kit (symbol, wordmark, lockups, icons), the workflow diagram, `notes.css` for themed learning notes, and `GUIDELINES.md` |
+| `assets/brand/` | the bench logo kit (symbol, wordmark, lockups, icons), the workflow and agent diagrams, `notes.css` for themed learning notes, and `GUIDELINES.md` |
 
 ## Install
 
@@ -66,6 +66,16 @@ Then work in that repo:
 Every experiment is scored twice. `uv run comp run` gives the CV score and the shadow score, and `uv run comp compare` keeps a change only if it is better on both by more than twice the noise that `uv run comp noise` measured. The leaderboard is a third check and never decides alone.
 
 `comp.toml` in each competition repo sets solo or team mode (team mode adds per-person experiment folders and reviewers) and whether learning notes are written.
+
+## Agents
+
+The main agent does the work in your repo. For jobs that need a clean room, it sends one of four agents, each with one job and fixed limits.
+
+![The bench agents. The main agent owns the repo, picks the directions, writes the briefs and rebuilds the winners itself, and you approve every upload. The scouter reads forums, write-ups, papers and books and returns cards in ideas.md; it can use the web but can't run code. Up to three researchers each test one direction's cards in their own git worktree and return a report table; they run code but have no web. The validator reads the data, CV, shadow and leaderboard scores and returns the noise, the train/test gap and whether the checks agree; it runs code, no web. The leak auditor reads a winner's code before any upload and returns clean or each leak with file and line; it is read-only. The rule: an agent that reads the web can't run code, and one that runs code can't read the web.](assets/brand/agents.svg)
+
+`/bench:research` runs them as a round. The ideas live as cards in `ideas.md`, and every tested card goes back with its numbers, so nobody repeats a dropped idea.
+
+![A research round in five steps: 1 fill, the scouter writes cards and the validator checks the validation; 2 choose three to six directions with one brief each; 3 test, up to three researchers each in a worktree; 4 audit, the leak auditor reads each winner's code; 5 rebuild, the main agent builds the winners as the next experiment. Results go back on the card in ideas.md, which moves from new to testing to kept or dropped. A winner is kept only if CV and the shadow test both beat twice the noise and the report's first row reproduces the baseline's scores exactly; the main agent reruns it before any upload.](assets/brand/research-round.svg)
 
 ## How it is built
 
