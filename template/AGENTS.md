@@ -24,6 +24,10 @@ A change is kept only if it is better on both, by more than the noise. Measure t
 9. Uploads use the team's few daily submissions and can't be taken back. Run `uv run comp submit` only when the person asked you to upload that specific file. Never upload through the platform's CLI directly, because the score then never reaches `submissions.md`.
 10. Format only the files you changed (`make format` formats tracked Python files only). Never run a formatter over the whole folder: it can rewrite other people's notes and documents.
 
+## Ideas
+
+`ideas.md` is the backlog of ideas to test. The `scouter` agent adds cards from the web; anyone can add one by hand. After an experiment or research round tests a card, set its status to `kept` or `dropped` and add the numbers.
+
 ## After every experiment
 
 Add an entry to `experiments.md` using the format at the top of that file: CV ± std, shadow, the parts of the score, and one or two sentences on what the result tells us. Record failures too.

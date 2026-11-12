@@ -17,6 +17,7 @@ If the competition repo already has its own harness (its own CV, metric and uplo
 2. Check that the repo's rules (its AGENTS.md or CLAUDE.md) say the same as the template's `AGENTS.md` on the points that matter: `solve` uses only the task, no future information, submissions come from clean commits and are logged, and uploads happen only when the person asks. Add what is missing.
 3. Enable the plugin for everyone who works in the repo: in `.claude/settings.json`, add bench to `extraKnownMarketplaces` and `"bench@bench": true` to `enabledPlugins`.
 4. Seed the repo's `lessons.md` from what is already in its experiment log.
+5. Add `ideas.md` from `${CLAUDE_PLUGIN_ROOT}/template/ideas.md`, with a card for each idea already listed in the repo's plans or notes.
 
 Then continue with the `experiment` and `research` skills.
 
@@ -61,7 +62,7 @@ This is the most important question in the whole competition. Look at the data, 
 - Distance: how far is the test from the nearest training row (in days, in groups)? CV must not be closer than that.
 - New categories in the test that never appear in training.
 
-Write the answer in `README.md` under "How we validate". If the data has a shape the default `data.py` and `cv.py` don't fit (time series with holes, images, several tables), rewrite those two files now, keeping `Task`, `folds` and `cross_validate` with the same meaning.
+For a deeper look, send the `bench:validator` agent (adversarial validation, distance, simple baselines). Write the answer in `README.md` under "How we validate". If the data has a shape the default `data.py` and `cv.py` don't fit (time series with holes, images, several tables), rewrite those two files now, keeping `Task`, `folds` and `cross_validate` with the same meaning.
 
 ## 5. Build the shadow test
 

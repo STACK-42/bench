@@ -42,7 +42,7 @@ Zindi has no upload API here: `comp submit` checks the file and prints what to u
 
 ## Final picks
 
-Near the deadline, choose the files that count for the private leaderboard (`final_picks` in `comp.toml`):
+Near the deadline, choose the files that count for the private leaderboard (`final_picks` in `comp.toml`). A day or two before, send the `bench:validator` agent to check the noise and whether CV, shadow and the board still agree; its trust verdict decides how much weight the public score gets.
 
 1. The best file by CV and shadow together, even if another file has a better public score. The public board is only part of the test.
 2. If there is a second pick: a file that is good on every check but differs in method (a hedge), not a near copy of the first.

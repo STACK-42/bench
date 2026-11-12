@@ -21,7 +21,7 @@ Commands: this skill shows the template's defaults (`uv run comp run`, `uv run c
 | CV better, shadow and board worse | the change fits the training data's structure, not the test's | trust shadow, drop the change |
 | board better, CV and shadow worse | likely luck on the public sample | don't follow it |
 
-3. When the board disagrees, look for what the test has that the checks don't: different dates or groups, new categories, a different mix of rows, a part of the score that changed most. Look at the parts of the score, not only the total. Build a check for the difference if you can (in Madinah, a test-day check from the test's released rows found the cause in one evening).
+3. When the board disagrees, look for what the test has that the checks don't: different dates or groups, new categories, a different mix of rows, a part of the score that changed most. Look at the parts of the score, not only the total. Build a check for the difference if you can (in Madinah, a test-day check from the test's released rows found the cause in one evening). The `bench:validator` agent can do the search: adversarial validation, the distance between train and test, and which checks rank the files differently.
 4. Write the finding in `experiments.md` and, if notes are on, in the notes.
 
 ## Lessons
