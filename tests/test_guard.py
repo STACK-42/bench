@@ -79,3 +79,29 @@ def test_script_prints_a_permission_decision(repo):
     decision = json.loads(out.stdout)["hookSpecificOutput"]
     assert decision["hookEventName"] == "PreToolUse"
     assert decision["permissionDecision"] == "deny"
+
+
+@pytest.fixture
+def adopted(tmp_path):
+    """A repo that had its own harness before bench: comp.toml names its commands."""
+    (tmp_path / "comp.toml").write_text(
+        '[commands]\nrun = "uv run madinah run"\nsubmit = "uv run madinah submit"\n'
+    )
+    return tmp_path
+
+
+def test_a_repo_can_name_its_own_submit_command(adopted):
+    decision = guard.decide(event("uv run madinah submit submissions/s.csv --yes", adopted))
+    assert decision[0] == "ask"
+    assert guard.decide(event("uv run madinah submit s.csv", adopted, agent_id="a1"))[0] == "deny"
+    assert guard.decide(event("uv run madinah run experiments/a.py --submit", adopted)) is None
+
+
+def test_the_deny_message_names_the_repo_command(adopted):
+    verdict, reason = guard.decide(event("kaggle competitions submit x -f a.csv", adopted))
+    assert verdict == "deny" and "madinah submit" in reason
+
+
+def test_without_tomllib_the_submit_line_is_read_by_hand(adopted, monkeypatch):
+    monkeypatch.setattr(guard, "tomllib", None)
+    assert guard.submit_command(adopted / "comp.toml") == "madinah submit"
