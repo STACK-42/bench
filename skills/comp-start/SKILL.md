@@ -9,6 +9,17 @@ The goal of every competition is the best final score. Most lost competitions ar
 
 Work through the steps in order. Tell the person what you found after steps 2, 4 and 6.
 
+## Adopting a repo that already exists
+
+If the competition repo already has its own harness (its own CV, metric and upload command), don't copy the template over it. Instead:
+
+1. Add a `comp.toml` at the repo root, from `${CLAUDE_PLUGIN_ROOT}/template/comp.toml`. Fill `[competition]`, `[team]` and `[notes]`, and the `[commands]` table with the repo's own commands. Leave out the commands it doesn't have. The upload hook reads `[commands] submit` and asks the person before that command runs.
+2. Check that the repo's rules (its AGENTS.md or CLAUDE.md) say the same as the template's `AGENTS.md` on the points that matter: `solve` uses only the task, no future information, submissions come from clean commits and are logged, and uploads happen only when the person asks. Add what is missing.
+3. Enable the plugin for everyone who works in the repo: in `.claude/settings.json`, add bench to `extraKnownMarketplaces` and `"bench@bench": true` to `enabledPlugins`.
+4. Seed the repo's `lessons.md` from what is already in its experiment log.
+
+Then continue with the `experiment` and `research` skills.
+
 ## 1. Gather the facts
 
 Ask only for what you can't find yourself: the competition URL, and solo or team (and the teammates' GitHub logins for a team). Then read, from the competition page and data page:

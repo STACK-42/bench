@@ -48,6 +48,8 @@ Start a competition by telling Claude, or run the skill directly:
 /bench:comp-start https://www.kaggle.com/competitions/<name>
 ```
 
+For a competition repo that already has its own harness, `/bench:comp-start` adds a `comp.toml` that names the repo's own commands instead of copying the template.
+
 Then work in that repo:
 
 ```text

@@ -7,6 +7,8 @@ description: Send research agents to try many ML ideas at once in a bench compet
 
 Machine learning is experimental: most ideas fail, and the ones that work often work only in combination. Research agents try many variants quickly, away from the main repo. You (the main agent) stay in charge of the repo, the decisions and the uploads.
 
+Commands: this skill shows the template's defaults (`uv run comp run`, `uv run comp submit`, and so on). If `comp.toml` has a `[commands]` table, use the commands named there instead. If a command is empty or missing, do that step by hand: `compare` by reading both runs from MLflow and checking each score against the noise, `noise` by running the baseline with two or three other random seeds, and `shadow` with whatever second check the repo's README describes.
+
 ## 1. Choose directions
 
 List three to six directions. Good sources: the person's request, `~/.bench/lessons.md`, the `experiments.md` failures (to avoid repeating them), a playbook or paper the person names, and the parts of the score that are worst. Give each direction a clear question, for example "Does a LightGBM model of the current forecast's error help, and with which mix weight?"

@@ -7,6 +7,8 @@ description: Run one experiment in a bench competition repo - one idea, scored o
 
 One idea per experiment. If you change two things and the score moves, you don't know which one did it.
 
+Commands: this skill shows the template's defaults (`uv run comp run`, `uv run comp submit`, and so on). If `comp.toml` has a `[commands]` table, use the commands named there instead. If a command is empty or missing, do that step by hand: `compare` by reading both runs from MLflow and checking each score against the noise, `noise` by running the baseline with two or three other random seeds, and `shadow` with whatever second check the repo's README describes.
+
 ## Steps
 
 1. Pick the baseline: the best experiment so far that is better on both CV and shadow (read `experiments.md` and MLflow). Check that `noise.json` belongs to it; if not, run `uv run comp noise <baseline>`.

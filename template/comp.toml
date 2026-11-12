@@ -27,6 +27,18 @@ scheme = "kfold"               # kfold | group | time
 folds = 5
 seeds = 1                      # how many times to repeat the folds with new shuffles
 
+[commands]
+# The commands the skills run. A repo made from this template keeps the defaults.
+# A repo that had its own harness before bench names its own here, and leaves
+# out what it lacks (the skills then do that step by hand).
+run = "uv run comp run"            # CV and shadow score of one experiment
+shadow = ""                        # set when the shadow test is a separate command
+noise = "uv run comp noise"
+compare = "uv run comp compare"
+submit = "uv run comp submit"      # the upload hook asks the person before this runs
+scores = "uv run comp scores"
+check = "uv run comp check"
+
 [team]
 mode = "solo"                  # solo | team
 people = ["me"]                # one experiments/<name>/ folder per person

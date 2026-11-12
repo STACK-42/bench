@@ -7,6 +7,8 @@ description: After a leaderboard score comes back in a bench repo, check whether
 
 The leaderboard is the only check you can't build yourself. Use every score to test your own checks.
 
+Commands: this skill shows the template's defaults (`uv run comp run`, `uv run comp submit`, and so on). If `comp.toml` has a `[commands]` table, use the commands named there instead. If a command is empty or missing, do that step by hand: `compare` by reading both runs from MLflow and checking each score against the noise, `noise` by running the baseline with two or three other random seeds, and `shadow` with whatever second check the repo's README describes.
+
 ## After each scored upload
 
 1. `uv run comp scores` pulls the scores and prints the rank correlation between CV and the public board once three files are scored.

@@ -7,6 +7,8 @@ description: Plan and make leaderboard uploads in a bench competition repo - cho
 
 Uploads are scarce (a few per day) and can't be taken back. The public leaderboard is a sample of the test: useful as a third check, never as the only one.
 
+Commands: this skill shows the template's defaults (`uv run comp run`, `uv run comp submit`, and so on). If `comp.toml` has a `[commands]` table, use the commands named there instead. If a command is empty or missing, do that step by hand: `compare` by reading both runs from MLflow and checking each score against the noise, `noise` by running the baseline with two or three other random seeds, and `shadow` with whatever second check the repo's README describes.
+
 ## Make the file
 
 1. The experiment must be committed. `uv run comp run <experiment> --submit` writes `submissions/submission<CV>.csv` and its row in `submissions.md`.
