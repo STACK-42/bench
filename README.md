@@ -17,14 +17,17 @@ bench is a Claude Code plugin for machine learning competitions on Kaggle and Zi
 
 | part | what it does |
 | --- | --- |
-| `template/` | the project harness each competition starts from: `comp.toml`, data loading, CV, a shadow test, the metric, MLflow tracking, a submissions log tied to commits, and Kaggle/Zindi upload |
+| `template/` | the project harness each competition starts from: `comp.toml`, data loading, CV, a shadow test, the metric, MLflow tracking (with out-of-fold predictions), a submissions log tied to commits, an `ideas.md` backlog, and Kaggle/Zindi upload |
 | `skills/comp-start` | set up a new competition and build and prove the validation before any model |
 | `skills/experiment` | one idea, scored on CV and the shadow test against the noise, logged, kept or dropped |
 | `skills/research` | send research agents to try many ideas in their own worktrees, with a fixed brief and report |
 | `skills/submit` | plan the day's few uploads, upload with your approval, pick the final submissions |
 | `skills/review` | after each leaderboard score: do the checks agree? Record lessons |
+| `skills/blend` | combine experiments that differ in method, with weights chosen on out-of-fold predictions |
 | `skills/explain` | optional learning notes in three layers, in simple English |
-| `agents/researcher` | tests one direction in a git worktree and reports a table |
+| `agents/scouter` | reads the web (forums, winning write-ups, papers, books) and writes idea cards to `ideas.md`; runs no code |
+| `agents/researcher` | tests the cards of one direction in a git worktree and reports a table; no web access |
+| `agents/validator` | checks the data and the validation: adversarial validation, train/test distance, whether the checks agree, noise, simple baselines |
 | `agents/leak-auditor` | reads an experiment and reports any information leak |
 | `hooks/guard.py` | in competition repos: asks you before every upload, blocks uploads that skip the log, blocks whole-folder formatting |
 | `lessons/seed.md` | lessons across competitions, read at the start of each new one |
@@ -57,6 +60,7 @@ Then work in that repo:
 /bench:research     test the ideas in this playbook against our best model
 /bench:submit       upload the best file when the limit resets
 /bench:review       the score came back: 0.912
+/bench:blend        blend 007 and 012
 ```
 
 Every experiment is scored twice. `uv run comp run` gives the CV score and the shadow score, and `uv run comp compare` keeps a change only if it is better on both by more than twice the noise that `uv run comp noise` measured. The leaderboard is a third check and never decides alone.
@@ -65,7 +69,7 @@ Every experiment is scored twice. `uv run comp run` gives the CV score and the s
 
 ## How it is built
 
-- Claude runs the work. The skills say what to do at each stage, and each agent has one job and fixed limits. The hook enforces two rules that should never depend on an agent remembering them: uploads need your approval, and nothing formats the whole folder.
+- Claude runs the work. The skills say what to do at each stage, and each agent has one job and fixed limits. The agent that reads the web (scouter) can't run code, and the agents that run code (researcher, validator) can't read the web, so text on a web page can never become a command. The hook enforces two rules that should never depend on an agent remembering them: uploads need your approval, and nothing formats the whole folder.
 - The template is copied into each competition and then belongs to it. Change `data.py`, `cv.py`, `metric.py` and `shadow.py` freely for a competition with a different shape; keep their meaning.
 - Lessons live in `~/.bench/lessons.md` on your machine, seeded from `lessons/seed.md`. Add the general ones back to `lessons/seed.md` here so every new competition starts from them.
 
