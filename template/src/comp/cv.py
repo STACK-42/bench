@@ -36,6 +36,7 @@ class CVResult:
     score: float  # mean over folds: the number that names a submission
     parts: dict[str, float]  # mean of each part of the score, if the metric has parts
     folds: pd.DataFrame  # one row per fold
+    oof: pd.DataFrame  # out-of-fold predictions: seed, fold, id, truth, prediction
 
     @property
     def std(self) -> float:
@@ -72,13 +73,28 @@ def folds(train: pd.DataFrame, seeds: int = 1):
 
 
 def cross_validate(solver: Solver, train: pd.DataFrame, seeds: int = 1) -> CVResult:
-    rows = []
+    """Score `solver` on every fold. Also keeps each held-out prediction (the
+    out-of-fold predictions), so later runs can blend experiments without
+    running them again."""
+    rows, predictions = [], []
     for label, task, truth in folds(train, seeds):
-        rows.append({**label, "rows": len(truth), **score(truth, solver(task))})
+        prediction = solver(task).reindex(truth.index)
+        rows.append({**label, "rows": len(truth), **score(truth, prediction)})
+        predictions.append(
+            pd.DataFrame(
+                {
+                    **label,
+                    "id": truth.index,
+                    "truth": truth.to_numpy(),
+                    "prediction": prediction.to_numpy(),
+                }
+            )
+        )
     frame = pd.DataFrame(rows)
     parts = [c for c in frame.columns if c not in ("seed", "fold", "rows", "score")]
     return CVResult(
         score=float(frame["score"].mean()),
         parts=frame[parts].mean().to_dict(),
         folds=frame,
+        oof=pd.concat(predictions, ignore_index=True),
     )

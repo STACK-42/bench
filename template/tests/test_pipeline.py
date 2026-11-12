@@ -25,6 +25,14 @@ def test_cv_ranks_a_real_model_above_the_mean(project):
     assert better.std >= 0
 
 
+def test_cv_keeps_one_prediction_per_held_out_row(project):
+    train = real_task().train
+    result = cv.cross_validate(linear_solver, train)
+    assert list(result.oof.columns) == ["seed", "fold", "id", "truth", "prediction"]
+    assert sorted(result.oof["id"]) == sorted(train["id"])  # kfold: every row held out once
+    assert result.oof["prediction"].notna().all()
+
+
 def test_folds_never_show_the_target_of_held_out_rows(project):
     train = real_task().train
     for _, task, truth in cv.folds(train):

@@ -15,6 +15,7 @@ from contextlib import contextmanager
 os.environ.setdefault("MLFLOW_DISABLE_AGENT_HINT", "1")
 
 import mlflow  # noqa: E402
+import pandas as pd  # noqa: E402
 
 from comp import config, paths  # noqa: E402
 from comp.cv import CV_VERSION, CVResult  # noqa: E402
@@ -100,6 +101,14 @@ def log_cv(result: CVResult) -> None:
     for part, value in result.parts.items():
         mlflow.log_metric(f"cv_{part}", value)
     mlflow.log_text(result.folds.to_csv(index=False), "cv_folds.csv")
+    # Kept for blending: the blend skill reads these to choose mix weights.
+    mlflow.log_text(result.oof.to_csv(index=False), "oof.csv")
+
+
+def load_oof(run_id: str) -> pd.DataFrame:
+    """The out-of-fold predictions a run logged (columns seed, fold, id, truth, prediction)."""
+    mlflow.set_tracking_uri(paths.MLFLOW_URI)
+    return pd.read_csv(mlflow.artifacts.download_artifacts(run_id=run_id, artifact_path="oof.csv"))
 
 
 def log_shadow(scores: dict[str, float], how: str) -> None:
